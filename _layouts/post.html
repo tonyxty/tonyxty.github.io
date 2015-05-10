@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include nav.html %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          {% for post in site.posts limit:10 %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </div>
+        <main class="col-md-10">
+          <article>
+            <h1>{{ page.title }}</h1>
+            <time datetime="{{ page.date | date: "%Y-%m-%d"}}"
+              pubdate="pubdate" class="small text-muted">
+              {{ page.date | date: "%Y-%m-%d" }}
+            </time>
+            {{ content }}
+          </article>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

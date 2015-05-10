@@ -1,0 +1,16 @@
+name: Lambdaiae
+description: Tony Beta Lambda's blog for mathematics.
+author: Tony Beta Lambda
+author_email: tonybetalambda@gmail.com
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude: [README.md, LICENSE]
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
