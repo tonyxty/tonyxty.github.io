@@ -2,6 +2,8 @@ name: Lambdaiae
 description: Tony Beta Lambda's blog for mathematics.
 author: Tony Beta Lambda
 author_email: tonybetalambda@gmail.com
+baseurl:
+permalink: /blog/:title
 markdown: kramdown
 kramdown:
   input: GFM

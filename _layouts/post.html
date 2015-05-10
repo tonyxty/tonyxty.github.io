@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-2">
           {% for post in site.posts limit:10 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
           {% endfor %}
         </div>
         <main class="col-md-10">
