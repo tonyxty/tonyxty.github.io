@@ -9,6 +9,7 @@ kramdown:
   input: GFM
   hard_wrap: false
 exclude: [README.md, LICENSE]
+future: true
 defaults:
   -
     scope:
