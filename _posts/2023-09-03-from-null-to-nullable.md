@@ -1,5 +1,6 @@
 ---
 title: From Null to Nullable
+series: Why complicated type systems are useful
 ---
 
 Every java programmer hates `NullPointerException`.  Indeed, any variable[^1] in java can take this special value of `null`, which indicates a lack of value in this variable.  They are like landmines in your code; stomp upon one and boom!  Your program is dead.  Thus, programming in java is like wading through a minefield.  You have to add checks like `if (var != null)` in a lot of places, which is error-prone and cumbersome[^2].
