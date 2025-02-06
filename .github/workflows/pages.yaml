@@ -1,0 +1,32 @@
+name: Build & deploy
+on: push
+
+jobs:
+  build:
+    name: Build pelican site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: py-actions/py-dependency-install@v4
+      - name: Install theme
+        run: |
+          wget -q https://github.com/Pelican-Elegant/elegant/archive/refs/tags/V5.4.0.zip
+          unzip V5.4.0.zip
+          pelican-themes -i elegant-5.4.0
+      - run: make publish
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

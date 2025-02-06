@@ -1,14 +1,14 @@
----
 title: Semantic Math
----
+date: 2015-05-11
+tags: general math, manifesto
+category: math
 
 > Formalism eliminates falsehood;  it does not lead to the truth.
 
-{:start="0"}
 0.  Lists should be numbered from zero.
 
-1.  Tell the truth, not formal statements.  Formal definitons are important,
-but they are not the essense of mathematics.  What the notion really means is
+1.  Tell the truth, not formal statements.  Formal definitions are important,
+but they are not the essence of mathematics.  What the notion really means is
 much more important than how it appears.
 
 2.  Motivation is important.  One should know why that particular structure is

@@ -1,7 +1,10 @@
----
 title: Type Systems Series Premier
 series: Why complicated type systems are useful
----
+series_index: 1
+date: 2023-09-02
+tags: intro, type system, programming language
+category: PL
+
 This series of articles aims to explain why complicated type systems such as λC can be useful in practice, and how such use inevitably leads to the ability to formalize mathematics.
 
 If you have been a software engineer and ever wondered "Why those PLT people invent all these fancy concepts about types?"  This series might answer your question.

@@ -1,7 +1,9 @@
----
 title: From Null to Nullable
 series: Why complicated type systems are useful
----
+series_index: 2
+date: 2023-09-03
+tags: type system, generics
+category: PL
 
 Every java programmer hates `NullPointerException`.  Indeed, any variable[^1] in java can take this special value of `null`, which indicates a lack of value in this variable.  They are like landmines in your code; stomp upon one and boom!  Your program is dead.  Thus, programming in java is like wading through a minefield.  You have to add checks like `if (var != null)` in a lot of places, which is error-prone and cumbersome[^2].
 
@@ -11,9 +13,10 @@ But the compiler ought to know!  If we require each nullable variable to be mark
 
 Much like data types, nullablity defines what value a variable can hold, and what operations we can do with it.  Put more concretely, a nullable varaible of base type `T` obeys three laws:
 
-{:start="0"}
 0.  The special value `null` can be assigned to this variable.
+
 1.  Any value of type `T` can be assigned to this variable.
+
 2.  If this variable is not `null`, then a value of type `T` can be extracted from it.
 
 There are various ways to implement such a construction.  There is one important note though: a nullable variable of type `T` behaves fundamentally differently from a variable of type `T`, and therefore should be considered of a different type.  Here is the change of point of view: instead of saying `x` is a nullable variable of type `T`, saying `x` is a variable of type `Nullable<T>` more accurately describes the situation.  This POV, however, requires that the compiler understands the following concept:
