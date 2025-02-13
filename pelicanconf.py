@@ -1,8 +1,11 @@
+import jinja2
+
 AUTHOR = 'Tony Beta Lambda'
 SITENAME = 'Lambdaiae'
 SITEURL = ""
 
 PATH = "content"
+STATIC_PATHS = []
 
 TIMEZONE = 'Asia/Shanghai'
 
@@ -31,7 +34,7 @@ SLUGIFY_SOURCE = 'basename'
 USE_FOLDER_AS_CATEGORY = False
 
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
-THEME = 'elegant-5.4.0'
+THEME = 'pelican-lambda'
 
 TAGS_URL = "tags"
 CATEGORIES_URL = "categories"
@@ -51,4 +54,10 @@ MARKDOWN = {
         'markdown.extensions.sane_lists': {},
     },
     'output_format': 'html5',
+}
+
+JINJA_ENVIRONMENT = {
+    'trim_blocks': True,
+    'lstrip_blocks': True,
+    'undefined': jinja2.StrictUndefined,
 }
