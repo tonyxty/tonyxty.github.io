@@ -8,11 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: py-actions/py-dependency-install@v4
-      - name: Install theme
-        run: |
-          wget -q https://github.com/tonyxty/pelican-lambda/releases/download/v0.1.0-alpha/pelican-lambda.zip
-          unzip pelican-lambda.zip
-          pelican-themes -i pelican-lambda
+      - name: Download theme
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: "tonyxty/pelican-lambda"
+          latest: true
+          fileName: pelican-lambda.zip
+      - run: unzip pelican-lambda.zip
       - run: make publish
       - uses: actions/upload-pages-artifact@v3
         with:
